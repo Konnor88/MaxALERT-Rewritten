@@ -4,7 +4,7 @@ Welcome to the MaxALERT Rewritten repository! This repository contains the sourc
 <b>Please note that all other TMAFE products, such as BlobBUDDY and future MaxALERT Rewritten releases, are currently closed-source and considered proprietary.</b>
 
 # Introduction
-MaxALERT Rewritten brings back the beloved MS Agent program with modern enhancements. This project is a recreation of the original MaxALERT, as the original program is now lost and was most likely malware itself.
+MaxALERT Rewritten brings everyone's favorite blue parrot, Max, to your desktop! Please note that this project is a recreation of the original MaxALERT, as the original program is now lost and was most likely malware itself.
 
 # Features
 * Recreation of the original MaxALERT program
