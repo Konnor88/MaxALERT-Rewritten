@@ -59,7 +59,7 @@ Partial Class AboutBoxNew
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(133, 25)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Version 1.00"
+        Me.Label1.Text = "Version 1.10"
         '
         'LinkLabel1
         '
@@ -162,7 +162,7 @@ Partial Class AboutBoxNew
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(733, 403)
+        Me.ClientSize = New System.Drawing.Size(735, 405)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)

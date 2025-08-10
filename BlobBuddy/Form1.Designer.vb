@@ -24,6 +24,7 @@ Partial Class Form1
         Me.AxAgent1 = New AxAgentObjects.AxAgent
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.TabPage1 = New System.Windows.Forms.TabPage
+        Me.DateString = New System.Windows.Forms.Label
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
         Me.PictureBox3 = New System.Windows.Forms.PictureBox
         Me.Label5 = New System.Windows.Forms.Label
@@ -59,6 +60,8 @@ Partial Class Form1
         Me.PictureBox5 = New System.Windows.Forms.PictureBox
         Me.SpeakPic = New System.Windows.Forms.PictureBox
         Me.TabPage3 = New System.Windows.Forms.TabPage
+        Me.Button24 = New System.Windows.Forms.Button
+        Me.Button22 = New System.Windows.Forms.Button
         Me.Button23 = New System.Windows.Forms.Button
         Me.Button21 = New System.Windows.Forms.Button
         Me.Label6 = New System.Windows.Forms.Label
@@ -148,7 +151,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
-        Me.TabControl1.Location = New System.Drawing.Point(225, 71)
+        Me.TabControl1.Location = New System.Drawing.Point(223, 71)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(407, 254)
@@ -157,6 +160,7 @@ Partial Class Form1
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TabPage1.Controls.Add(Me.DateString)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Controls.Add(Me.PictureBox8)
@@ -168,6 +172,16 @@ Partial Class Form1
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Search and Surf"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'DateString
+        '
+        Me.DateString.AutoSize = True
+        Me.DateString.ForeColor = System.Drawing.Color.Black
+        Me.DateString.Location = New System.Drawing.Point(293, 10)
+        Me.DateString.Name = "DateString"
+        Me.DateString.Size = New System.Drawing.Size(100, 13)
+        Me.DateString.TabIndex = 17
+        Me.DateString.Text = "30 September 2024"
         '
         'GroupBox2
         '
@@ -569,6 +583,8 @@ Partial Class Form1
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TabPage3.Controls.Add(Me.Button24)
+        Me.TabPage3.Controls.Add(Me.Button22)
         Me.TabPage3.Controls.Add(Me.Button23)
         Me.TabPage3.Controls.Add(Me.Button21)
         Me.TabPage3.Controls.Add(Me.Label6)
@@ -582,11 +598,33 @@ Partial Class Form1
         Me.TabPage3.Text = "Share me with Friends"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'Button24
+        '
+        Me.Button24.ForeColor = System.Drawing.Color.White
+        Me.Button24.Image = CType(resources.GetObject("Button24.Image"), System.Drawing.Image)
+        Me.Button24.Location = New System.Drawing.Point(316, 56)
+        Me.Button24.Name = "Button24"
+        Me.Button24.Size = New System.Drawing.Size(75, 23)
+        Me.Button24.TabIndex = 11
+        Me.Button24.Text = "WhatsApp"
+        Me.Button24.UseVisualStyleBackColor = True
+        '
+        'Button22
+        '
+        Me.Button22.ForeColor = System.Drawing.Color.White
+        Me.Button22.Image = CType(resources.GetObject("Button22.Image"), System.Drawing.Image)
+        Me.Button22.Location = New System.Drawing.Point(232, 56)
+        Me.Button22.Name = "Button22"
+        Me.Button22.Size = New System.Drawing.Size(75, 23)
+        Me.Button22.TabIndex = 10
+        Me.Button22.Text = "Reddit"
+        Me.Button22.UseVisualStyleBackColor = True
+        '
         'Button23
         '
         Me.Button23.ForeColor = System.Drawing.Color.White
         Me.Button23.Image = Global.MaxAlert.My.Resources.Resources.lightbluebg
-        Me.Button23.Location = New System.Drawing.Point(87, 56)
+        Me.Button23.Location = New System.Drawing.Point(70, 56)
         Me.Button23.Name = "Button23"
         Me.Button23.Size = New System.Drawing.Size(75, 23)
         Me.Button23.TabIndex = 7
@@ -597,18 +635,18 @@ Partial Class Form1
         '
         Me.Button21.ForeColor = System.Drawing.Color.White
         Me.Button21.Image = Global.MaxAlert.My.Resources.Resources.lightbluebg
-        Me.Button21.Location = New System.Drawing.Point(168, 56)
+        Me.Button21.Location = New System.Drawing.Point(151, 56)
         Me.Button21.Name = "Button21"
         Me.Button21.Size = New System.Drawing.Size(75, 23)
         Me.Button21.TabIndex = 5
-        Me.Button21.Text = "Twitter"
+        Me.Button21.Text = "Twitter/X"
         Me.Button21.UseVisualStyleBackColor = True
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(28, 61)
+        Me.Label6.Location = New System.Drawing.Point(11, 61)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(55, 13)
         Me.Label6.TabIndex = 4
@@ -653,9 +691,9 @@ Partial Class Form1
         Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(351, 9)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(59, 15)
+        Me.Label3.Size = New System.Drawing.Size(35, 15)
         Me.Label3.TabIndex = 12
-        Me.Label3.Text = "Build 142"
+        Me.Label3.Text = "Build"
         Me.Label3.Visible = False
         '
         'OpenFileDialog1
@@ -687,7 +725,7 @@ Partial Class Form1
         '
         Me.Button20.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(14, Byte), Integer))
         Me.Button20.ForeColor = System.Drawing.Color.White
-        Me.Button20.Location = New System.Drawing.Point(138, 335)
+        Me.Button20.Location = New System.Drawing.Point(138, 329)
         Me.Button20.Name = "Button20"
         Me.Button20.Size = New System.Drawing.Size(73, 23)
         Me.Button20.TabIndex = 24
@@ -698,7 +736,7 @@ Partial Class Form1
         '
         Me.Button16.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(14, Byte), Integer))
         Me.Button16.ForeColor = System.Drawing.Color.White
-        Me.Button16.Location = New System.Drawing.Point(396, 335)
+        Me.Button16.Location = New System.Drawing.Point(396, 329)
         Me.Button16.Name = "Button16"
         Me.Button16.Size = New System.Drawing.Size(75, 23)
         Me.Button16.TabIndex = 23
@@ -709,7 +747,7 @@ Partial Class Form1
         '
         Me.Button10.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(14, Byte), Integer))
         Me.Button10.ForeColor = System.Drawing.Color.White
-        Me.Button10.Location = New System.Drawing.Point(7, 335)
+        Me.Button10.Location = New System.Drawing.Point(7, 329)
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(58, 23)
         Me.Button10.TabIndex = 13
@@ -720,7 +758,7 @@ Partial Class Form1
         '
         Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(14, Byte), Integer))
         Me.Button6.ForeColor = System.Drawing.Color.White
-        Me.Button6.Location = New System.Drawing.Point(472, 335)
+        Me.Button6.Location = New System.Drawing.Point(472, 329)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(75, 23)
         Me.Button6.TabIndex = 7
@@ -731,7 +769,7 @@ Partial Class Form1
         '
         Me.Button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(14, Byte), Integer))
         Me.Button5.ForeColor = System.Drawing.Color.White
-        Me.Button5.Location = New System.Drawing.Point(548, 335)
+        Me.Button5.Location = New System.Drawing.Point(548, 329)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
         Me.Button5.TabIndex = 6
@@ -742,7 +780,7 @@ Partial Class Form1
         '
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(14, Byte), Integer))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(66, 335)
+        Me.Button1.Location = New System.Drawing.Point(66, 329)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(71, 23)
         Me.Button1.TabIndex = 2
@@ -777,7 +815,7 @@ Partial Class Form1
         Me.JungleUpdate.Cursor = System.Windows.Forms.Cursors.Hand
         Me.JungleUpdate.Image = Global.MaxAlert.My.Resources.Resources.bonkeyupdate
         Me.JungleUpdate.InitialImage = Nothing
-        Me.JungleUpdate.Location = New System.Drawing.Point(409, 0)
+        Me.JungleUpdate.Location = New System.Drawing.Point(408, 0)
         Me.JungleUpdate.Name = "JungleUpdate"
         Me.JungleUpdate.Size = New System.Drawing.Size(223, 37)
         Me.JungleUpdate.TabIndex = 30
@@ -1066,6 +1104,7 @@ Partial Class Form1
         CType(Me.AxAgent1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1183,5 +1222,8 @@ Partial Class Form1
     Friend WithEvents RandomSpeechTimer As System.Windows.Forms.Timer
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents Button8 As System.Windows.Forms.Button
+    Friend WithEvents Button24 As System.Windows.Forms.Button
+    Friend WithEvents Button22 As System.Windows.Forms.Button
+    Friend WithEvents DateString As System.Windows.Forms.Label
 
 End Class

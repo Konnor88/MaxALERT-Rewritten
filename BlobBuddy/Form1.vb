@@ -1,13 +1,13 @@
 Option Explicit On
-
 Imports AgentObjects
 Imports AxAgentObjects
 Imports System.IO
+Imports System.Runtime.InteropServices
 Imports System.Text
 Imports System.Media
 Imports System.Diagnostics
 Imports AgentServerObjects
-Imports System.Management
+Imports System.Globalization
 
 Public Class Form1
     Private WithEvents processCheckTimer As Timer
@@ -26,6 +26,22 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Label3.Text = "Build " + My.Application.Info.Version.Revision.ToString
+
+        ' Get the current date
+        Dim currentDate As DateTime = DateTime.Now
+
+        ' Format the date as "d MMMM yyyy" (e.g., 1 January 2000)
+        Dim formattedDate As String = currentDate.ToString("d MMMM yyyy", CultureInfo.InvariantCulture)
+
+        ' Set the formatted date to a label
+        DateString.Text = formattedDate ' Dim contextMenu As New ContextMenu()
+        ' contextMenu.MenuItems.Add("Show", AddressOf ShowForm)
+        '  contextMenu.MenuItems.Add("Quit", AddressOf QuitApplication)
+        ' NotifyIcon1.ContextMenu = contextMenu
+
+        ' Set the formatted date to a label
+        DateString.Text = formattedDate ' Dim contextMenu As New ContextMenu()
         RandomSpeechTimer.Start()
         If My.Settings.TrackBarValue = 1 Then
             Me.RandomSpeechTimer.Interval = 60000
@@ -89,7 +105,39 @@ Public Class Form1
             MaxALERT.Speak("I'm Max!")
             MaxALERT.Play("Restpose")
             MaxALERT.Speak("What is \emp\ your name?")
+            ' COMMANDS
+            MaxALERT.Commands.Add("My Home", "&My Home", "&My Home")
+            MaxALERT.Commands("My Home").Visible = True
+            MaxALERT.Commands("My Home").Enabled = True
 
+            MaxALERT.Commands.Add("Speak", "&Speak", "&Speak")
+            MaxALERT.Commands("Speak").Visible = True
+            MaxALERT.Commands("Speak").Enabled = True
+
+            MaxALERT.Commands.Add("Tell a Joke", "&Tell a Joke", "&Tell a Joke")
+            MaxALERT.Commands("Tell a Joke").Visible = True
+            MaxALERT.Commands("Tell a Joke").Enabled = True
+
+            MaxALERT.Commands.Add("Tell a Fact", "&Tell a Fact", "&Tell a Fact")
+            MaxALERT.Commands("Tell a Fact").Visible = True
+            MaxALERT.Commands("Tell a Fact").Enabled = True
+
+            MaxALERT.Commands.Add("About", "&About", "&About window")
+            MaxALERT.Commands("About").Visible = True
+            MaxALERT.Commands("About").Enabled = True
+
+            MaxALERT.Commands.Add("Settings", "&Settings", "&Settings window")
+            MaxALERT.Commands("Settings").Visible = True
+            MaxALERT.Commands("Settings").Enabled = True
+
+            MaxALERT.Commands.Add("Exit", "&Exit", "&Exit")
+            MaxALERT.Commands("Exit").Visible = True
+            MaxALERT.Commands("Exit").Enabled = True
+
+            MaxALERT.Commands.Visible = True
+            MaxALERT.Activate()
+
+            MaxALERT.Commands.Caption = "MaxALERT Menu"
 
 
         Else
@@ -99,7 +147,39 @@ Public Class Form1
             MaxALERT.LanguageID = &H409
             MaxALERT.MoveTo(320, 240)
             MaxALERT.Show()
+            ' COMMANDS
+            MaxALERT.Commands.Add("My Home", "&My Home", "&My Home")
+            MaxALERT.Commands("My Home").Visible = True
+            MaxALERT.Commands("My Home").Enabled = True
 
+            MaxALERT.Commands.Add("Speak", "&Speak", "&Speak")
+            MaxALERT.Commands("Speak").Visible = True
+            MaxALERT.Commands("Speak").Enabled = True
+
+            MaxALERT.Commands.Add("Tell a Joke", "&Tell a Joke", "&Tell a Joke")
+            MaxALERT.Commands("Tell a Joke").Visible = True
+            MaxALERT.Commands("Tell a Joke").Enabled = True
+
+            MaxALERT.Commands.Add("Tell a Fact", "&Tell a Fact", "&Tell a Fact")
+            MaxALERT.Commands("Tell a Fact").Visible = True
+            MaxALERT.Commands("Tell a Fact").Enabled = True
+
+            MaxALERT.Commands.Add("About", "&About", "&About window")
+            MaxALERT.Commands("About").Visible = True
+            MaxALERT.Commands("About").Enabled = True
+
+            MaxALERT.Commands.Add("Settings", "&Settings", "&Settings window")
+            MaxALERT.Commands("Settings").Visible = True
+            MaxALERT.Commands("Settings").Enabled = True
+
+            MaxALERT.Commands.Add("Exit", "&Exit", "&Exit")
+            MaxALERT.Commands("Exit").Visible = True
+            MaxALERT.Commands("Exit").Enabled = True
+
+            MaxALERT.Commands.Visible = True
+            MaxALERT.Activate()
+
+            MaxALERT.Commands.Caption = "MaxALERT Menu"
             'THIS IS NOT THE FIRST RUN
 
             ' TIME CHECK
@@ -327,16 +407,6 @@ Public Class Form1
         UtilPanel3.Hide()
     End Sub
 
-    Private Sub AxAgent1_Command(ByVal sender As Object, ByVal e As AxAgentObjects._AgentEvents_CommandEvent) Handles AxAgent1.Command
-
-        Select Case sender
-
-            Case "ACO"
-                MaxALERT.Speak("Test")
-                AgentControl.PropertySheet.Visible = True
-        End Select
-    End Sub
-
 
     Private Sub AxAgent1_DblClick(ByVal sender As Object, ByVal e As AxAgentObjects._AgentEvents_DblClickEvent) Handles AxAgent1.DblClick
         Dim random5 As New Random()
@@ -538,7 +608,7 @@ Public Class Form1
 
     Private Sub ComputerUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComputerUpdate.Click
         MaxALERT.Speak("Launching MaxALERT Rewritten web page...")
-        Dim webAddress As String = "https://tmafe.com/maxalert"
+        Dim webAddress As String = "https://tmafe.com/maxupdate?version=1.1." + My.Application.Info.Version.Revision.ToString
         Process.Start(webAddress)
     End Sub
 
@@ -1007,7 +1077,7 @@ Public Class Form1
 
     Private Sub JungleUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles JungleUpdate.Click
         MaxALERT.Speak("Launching MaxALERT Rewritten web page...")
-        Dim webAddress As String = "https://tmafe.com/maxalert"
+        Dim webAddress As String = "https://tmafe.com/maxupdate?version=1.1." + My.Application.Info.Version.Revision.ToString
         Process.Start(webAddress)
     End Sub
 
@@ -1023,6 +1093,57 @@ Public Class Form1
         MaxALERT.Play("Explain2")
         MaxALERT.Speak("And remember " + My.Settings.Name + ", let’s keep it clean!")
         MaxALERT.Play("Pleased")
+    End Sub
+
+    Private Sub Button22_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button22.Click
+
+        MaxALERT.Speak("Sure, I guess!")
+        Dim redditBaseUrl As String = "https://www.reddit.com/submit?"
+        Dim postUrl As String = "https%3A%2F%2Ftmafe.com%2Fmaxalert"
+        Dim postTitle As String = "Check out this awesome program!"
+
+        Dim fullUrl As String = redditBaseUrl & "url=" & postUrl & "&title=" & postTitle
+        Process.Start(fullUrl)
+
+    End Sub
+
+    Private Sub Button24_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button24.Click
+        Dim whatsappBaseUrl As String = "https://api.whatsapp.com/send?"
+        Dim whatsappText As String = "Check out this awesome program: https://tmafe.com/maxalert"
+        Dim fullWhatsappUrl As String = whatsappBaseUrl & "text=" & Uri.EscapeDataString(whatsappText)
+        Process.Start(fullWhatsappUrl)
+    End Sub
+
+    Private Sub AxAgent1_Command(ByVal sender As Object, ByVal e As AxAgentObjects._AgentEvents_CommandEvent) Handles AxAgent1.Command
+        If e.userInput.name = "Tell a Joke" Then
+            MaxALERT.StopAll()
+            HandlePictureBox4ClickEvent()
+        End If
+        If e.userInput.name = "Tell a Fact" Then
+            MaxALERT.StopAll()
+            HandlePictureBox5ClickEvent()
+        End If
+
+        If e.userInput.name = "About" Then
+            AboutBoxNew.Show()
+        End If
+        If e.userInput.name = "My Home" Then
+            Process.Start("https://tmafe.com/maxalert")
+        End If
+        If e.userInput.name = "Speak" Then
+            Me.Show()
+            UtilPanel1.Show()
+
+            UtilPanel3.Hide()
+     
+        End If
+        If e.userInput.name = "Settings" Then
+            OptionsForm.Show()
+        End If
+        If e.userInput.name = "Exit" Then
+
+            Application.Exit()
+        End If
     End Sub
 End Class
 
