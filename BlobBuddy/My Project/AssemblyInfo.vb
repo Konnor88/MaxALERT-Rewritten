@@ -14,7 +14,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Your desktop anti-malware assistant!")> 
 <Assembly: AssemblyCompany("TMAFE")> 
 <Assembly: AssemblyProduct("MaxALERT Rewritten")> 
-<Assembly: AssemblyCopyright("Copyright © TMAFE 2018-2023")> 
+<Assembly: AssemblyCopyright("Copyright © TMAFE 2018-2025")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)> 
@@ -33,7 +33,7 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.139.142")> 
-<Assembly: AssemblyFileVersion("1.0.139.142")> 
+<Assembly: AssemblyVersion("1.0.139.154")> 
+<Assembly: AssemblyFileVersion("1.0.139.154")> 
 
 <Assembly: NeutralResourcesLanguageAttribute("en-US")> 
